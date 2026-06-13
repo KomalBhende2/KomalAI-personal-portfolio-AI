@@ -1,12 +1,10 @@
-import streamlit as st
 from dotenv import load_dotenv
-from utils.retriever import get_retriever
-from utils.chatbot import get_chatbot_chain
-
-
-# Load environment variables
 load_dotenv()
 
+import os
+import streamlit as st
+from utils.retriever import get_retriever
+from utils.chatbot import get_chatbot_chain
 
 st.set_page_config(page_title="ABC Tech Support Bot", page_icon="🤖")
 st.title("🤖 ABC Tech Support Bot")
