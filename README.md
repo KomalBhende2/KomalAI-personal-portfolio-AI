@@ -56,7 +56,7 @@ The system follows a RAG pipeline:
 
 Clone the repository:
 
-git clone https://github.com/KomalBhende2/customer-rag-chatbot.git
+git clone https://github.com/KomalBhende2/KomalAI-personal-portfolio-AI.git
 
 cd repository-name
 
