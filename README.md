@@ -1,34 +1,56 @@
-# AI Customer Support Chatbot (RAG System)
+# KomalAI Portfolio Assistant
 
-This project is a customer support chatbot built using Retrieval-Augmented Generation (RAG). It answers user questions based on a company knowledge base and uses either a cloud-based or local language model.
+## Overview
 
-The system supports two LLM options:
-- Groq (online, fast inference)
-- Ollama (offline, local inference)
+KomalAI Portfolio Assistant is a Retrieval-Augmented Generation (RAG) based AI system designed to answer questions strictly based on Komal Bhende’s resume, projects, experience, certifications, education, and provided links.
 
-## Company Information
+The system is built as a personal portfolio chatbot that provides accurate, context-grounded responses without hallucination or external assumptions.
 
-Name: ABC Technologies Pvt. Ltd.  
-CEO: Komal Bhende  
-Domain: AI-powered software solutions and customer support systems
+---
 
-The chatbot is designed to answer queries related to the company using only the provided knowledge base.
+## Key Features
 
-## Features
+- Retrieval-Augmented Generation (RAG) based question answering system
+- Context-aware responses using vector database search
+- Strict grounding to resume and portfolio data only
+- Hallucination prevention through prompt-level constraints
+- Handles portfolio-specific queries (skills, projects, experience, education, certifications)
+- Support for greeting and general interaction within portfolio scope
+- Link-aware responses for GitHub and LinkedIn
 
-- Retrieval-Augmented Generation (RAG) based question answering
-- Context-based responses using vector search
-- Support for both online and offline language models
-- Strict grounding to prevent hallucinated answers
-- Handles greetings and general user queries
+---
+
+## System Description
+
+The chatbot is designed to act as a personal AI assistant representing Komal Bhende’s professional profile. It does not function as a general-purpose chatbot and is restricted to answering only portfolio-related queries.
+
+If a question is outside the available context, the system responds that the information is not available in the provided knowledge base.
+
+---
 
 ## Tech Stack
 
 - Python
 - LangChain
-- Groq API
-- Ollama
-- Vector database (FAISS or similar)
+- Large Language Models (Groq / Ollama support)
+- FAISS or similar vector database
+- OpenAI-compatible embeddings (if used)
+- Streamlit (optional UI layer)
+
+---
+
+## Architecture
+
+The system follows a RAG pipeline:
+
+1. Resume and portfolio data is loaded and chunked
+2. Embeddings are generated for each chunk
+3. Stored in a vector database
+4. User query is embedded and matched against stored chunks
+5. Relevant context is retrieved
+6. LLM generates response strictly based on retrieved context
+
+---
 
 ## Installation
 
@@ -50,11 +72,15 @@ Install dependencies:
 
 pip install -r requirements.txt
 
+---
+
 ## Environment Setup
 
 Create a .env file and add:
 
 GROQ_API_KEY=your_api_key
+
+---
 
 ## Running the Project
 
@@ -68,6 +94,8 @@ ollama run llama3
 
 Then configure the project to use the local model.
 
+---
+
 ## Start the Application
 
 python app.py
@@ -76,12 +104,15 @@ or if using Streamlit:
 
 streamlit run app.py
 
+---
+
 ## Example Questions
 
-- What does ABC Technologies Pvt. Ltd. do?
-- Who is the CEO of the company?
-- What services do you provide?
-- Hello
+- What are the skills of Komal Bhende?
+- Describe AI projects in the portfolio
+- What experience does she have in full-stack development?
+- Show certifications
+- Share GitHub and LinkedIn links
 
 ## Project Structure
 
@@ -95,4 +126,4 @@ README.md
 
 ## Important Note
 
-The chatbot only answers using the provided context. If the information is not available, it will respond that it could not find the information in the knowledge base.
+The KomalAI only answers using the provided context. If the information is not available, it will respond that it could not find the information in the knowledge base.
